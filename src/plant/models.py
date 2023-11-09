@@ -7,7 +7,7 @@ from django.utils import timezone
 
 
 class Plant(models.Model):
-    name = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
     scientific_name = models.CharField(max_length=100)
     description = models.TextField(default="")  # Setting the default value to an empty string.
     image_url = models.URLField(default="")

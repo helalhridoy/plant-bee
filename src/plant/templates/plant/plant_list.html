@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1>it works</h1>
-</body>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="">
+    <h2 class="text-center mt-5 text-4xl font-bold">Added Plants</h2>
+    <div class="flex gap-5 justify-center mt-10">
+        {% for plants in plants %}
+        <div class="card p-5 bg-slate-300 rounded-xl" style="width: 18rem">
+            <img src={{ plants.image_url }} class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h1 class="font-bold mt-3 mb-3 text-xl"> {{ plants.name }}</h1>
+              <h2>{{ plants.description }}</h2>
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+  </body>
 </html>
