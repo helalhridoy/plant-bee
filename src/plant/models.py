@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+
 
 # Create your models here.
 from django.conf import settings
@@ -8,8 +10,8 @@ from django.utils import timezone
 
 class Plant(models.Model):
     name = models.CharField(max_length=255)
-    scientific_name = models.CharField(max_length=100)
-    description = models.TextField(default="")  # Setting the default value to an empty string.
+    price = models.CharField(max_length=100)
+    description = models.TextField(default="") 
     image_url = models.URLField(default="")
 
     def publish(self):
@@ -18,3 +20,12 @@ class Plant(models.Model):
 
     def __str__(self):
         return self.scientific_name
+
+class PlantCreate(models.Model):
+    name = models.CharField(max_length=255)
+    price = models.CharField(max_length=100)
+    description = models.TextField(default="") 
+    image_url = models.URLField(default="")
+
+    def get_absolute_url(self):
+       return reverse('your_model_detail', kwargs={'pk': self.pk})

@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'plantbee.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'new_db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'latest_db.sqlite3'),
     }
 }
 
