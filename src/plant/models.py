@@ -19,7 +19,7 @@ class Plant(models.Model):
         self.save()
 
     def __str__(self):
-        return self.scientific_name
+        return self.name
 
 class PlantCreate(models.Model):
     name = models.CharField(max_length=255)
